@@ -65,22 +65,7 @@
             }
         }
 
-        .scroll-button-home {
-            border: none;
-            border: white 2px solid;
-            border-radius: 0;
-            background-color: black;
-            transform: translateX(-50%);
-            z-index: 1000;
-            animation-duration: 5s;
-            /* Define a duração da animação para 0.5s */
-        }
 
-        .scroll-button-home:hover {
-            color: black;
-            background-color: white;
-            border: black 2px solid;
-        }
 
         @media (max-width: 768px) {}
     </style>
@@ -117,19 +102,189 @@
             <br>
         </div>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div style="text-align: center;">
-                        <a href="#"
-                            class="btn btn-primary scroll-button-home animate__animated animate__bounce animate__infinite"
-                            style="font-size: 100%;">
-                            ↓ Role para baixo ↓
-                        </a>
+        <div>
+            <style>
+                /* Estilo para a frase motivacional */
+                .motivational-quote {
+                    width: 100%;
+                    float: left;
+                    margin: 0;
+                    background-color: #000;
+                    /* Fundo preto */
+                    color: white;
+                    /* Texto branco */
+                    padding: 50px 20px;
+                    /* Espaçamento superior e inferior */
+                    text-align: center;
+                    /* Alinha o texto ao centro */
+                    font-family: 'Helvetica', sans-serif;
+                    /* Fonte limpa e moderna */
+                    font-size: 100%;
+                    /* Tamanho de fonte adequado */
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                /* Efeito de animação para a frase */
+                .quote-text {
+                    margin: 0;
+                    position: relative;
+                    z-index: 1;
+                    letter-spacing: 2px;
+                    /* Aumenta o espaçamento entre as letras */
+                    opacity: 0;
+                    animation: fadeInUp 2s forwards;
+                    /* Animação de fade-in para cima */
+                    font-weight: bold;
+                    /* Deixa o texto mais forte */
+                }
+
+                /* Animação de fade-in com movimento para cima */
+                @keyframes fadeInUp {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            </style>
+            <div class="row m-0">
+                <div class="col-md-12" style="margin: 0;padding: 0;">
+                    <div class="motivational-quote">
+                        <p class="quote-text">
+                            "A EXECUÇÃO com EXAUSTÃO nos leva à perfeição!" - Zaparty
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+        <div>
+
+            <br>
+        </div>
+        <div class="container-fluid" style="float: left;">
+            <style>
+                /* Wrapper para conter os projetos e os botões */
+                .projects-wrapper {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    overflow: hidden;
+                    /* Oculta partes fora do wrapper */
+                    width: 100%;
+                    /* Ajuste conforme necessário */
+                    margin: 0 auto;
+                }
+
+                /* Botões de scroll */
+                .scroll-button {
+
+                    color: rgb(0, 0, 0);
+                    border: none;
+                    font-size: 30px;
+                    cursor: pointer;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    z-index: 2;
+                    transition: background-color 0.3s ease;
+                }
+
+
+
+                /* Botão à esquerda */
+                .scroll-button.left {
+                    margin-right: 10px;
+                }
+
+                /* Botão à direita */
+                .scroll-button.right {
+                    margin-left: 10px;
+                }
+
+                /* Contêiner dos projetos */
+                .projects-container {
+                    display: flex;
+                    /* Alinha os projetos em linha */
+                    gap: 20px;
+                    /* Espaço entre os quadrados */
+                    overflow-x: scroll;
+                    /* Habilita o scroll horizontal */
+                    scroll-behavior: smooth;
+                    /* Scroll suave */
+                    width: 100%;
+                    /* Mantém o contêiner dentro do wrapper */
+                    padding: 10px 0;
+                    /* Espaçamento vertical */
+                }
+
+                /* Estilo dos projetos */
+                .project {
+                    flex: 0 0 200px;
+                    /* Mantém a largura fixa dos quadrados */
+                    height: 200px;
+                    /* Altura dos quadrados */
+                    background-color: #ddd;
+                    /* Fundo inicial */
+                    border: 5px solid white;
+                    /* Borda inicial */
+                    transition: border-color 0.3s ease;
+                    /* Transição suave */
+                }
+
+                .project:hover {
+                    border-color: black;
+                    /* Borda preta ao passar o mouse */
+                }
+            </style>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <div class="container">
+                            <h2>Projetos</h2>
+                            <div class="projects-wrapper">
+                                <div>
+                                    <p class="scroll-button left">&larr;</p>
+
+                                </div>
+                                <div class="projects-container">
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                </div>
+                                <div>
+                                    <p class="scroll-button right">&rarr;</p>
+
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div>
             <hr>
         </div>
@@ -149,7 +304,7 @@
 
                 /* Botões de scroll */
                 .scroll-button {
-                  
+
                     color: rgb(0, 0, 0);
                     border: none;
                     font-size: 30px;
@@ -164,7 +319,7 @@
                     transition: background-color 0.3s ease;
                 }
 
-        
+
 
                 /* Botão à esquerda */
                 .scroll-button.left {
