@@ -1,176 +1,285 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title lang="pt-br">William Trindade - Engenheiro de Software</title>
-    <title lang="en">William Trindade - Software Engineer</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
-            margin: 0;
+        * {
             padding: 0;
+            margin: 0;
+            font-family: "Josefin Sans", sans-serif;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-
-        .profile-section {
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.1);
-        }
-
-        .social-links {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .social-links a {
-            border-radius: 5px;
-            display: inline-block;
-            margin: 0 10px;
-            color: #fff;
-            font-size: 21px;
-            width: 45px;
-            height: 45px;
-            background-color: #000;
-            line-height: 45px;
-            text-align: center;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        .social-links a:hover {
-            background-color: #fff;
-            color: #000;
-        }
-
-        .section-title {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 36px;
-        }
-
-        /* Parallax */
-        .parallax-section {
-            background-image: url('./caffeine-1846280_1280.jpg');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: top;
-            height: 200px;
+        .left-container {
+            height: 42vh;
+            /* 50% da altura da tela */
             display: flex;
             align-items: center;
             justify-content: center;
+            color: black;
+            width: 100%;
+        }
+
+        .right-container {
+            height: 50vh;
+            /* 50% da altura da tela */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            width: 100%;
+        }
+
+        .left-container div {
             text-align: center;
-            color: #fff;
-            font-size: 36px; /* Alterando o tamanho da fonte */
-            font-family: 'Arial Black', sans-serif; /* Alterando a fonte */
+            display: flex;
+            flex-direction: column;
+            /* Empilha os itens verticalmente */
+            align-items: center;
+            /* Centraliza horizontalmente */
+            justify-content: flex-end;
+            /* Centraliza verticalmente */
+            height: 100%;
+            /* Garante que ocupe todo o espaço disponível */
         }
 
-        /* Medium Section */
-        .medium-section {
-            text-align: center;
-            padding-bottom: 50px;
-        }
-        .medium-section .container {
-            background-color: #f8f9fa00;
+
+        @media (max-width: 768px) {
+
+            .left-container,
+            .right-container {
+                height: 50vh;
+                /* 50% da altura em dispositivos móveis */
+                width: 100%;
+                /* Garantir que ocupem a largura total */
+            }
         }
 
-        .medium-title {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .medium-description {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .medium-button {
-            border-radius: 5px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 24px;
-            width: 50px;
-            height: 50px;
-            background-color: #000;
+        .scroll-button-home {
             border: none;
-            padding: 10px 20px;
-            font-size: 20px;
-            transition: background-color 0.3s ease-in-out;
+            border: white 2px solid;
+            border-radius: 0;
+            background-color: black;
+            transform: translateX(-50%);
+            z-index: 1000;
+            animation-duration: 5s;
+            /* Define a duração da animação para 0.5s */
         }
 
-        .medium-button:hover {
-            text-decoration: none;
-
-            background-color: #ffffff;
-            color: #000000;
+        .scroll-button-home:hover {
+            color: black;
+            background-color: white;
+            border: black 2px solid;
         }
+
+        @media (max-width: 768px) {}
     </style>
 </head>
 
 <body>
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 left-container">
+                    <div>
+                        <h1 style="font-size: 4.5rem;" class="animate__animated animate__backInLeft">William Trindade
+                        </h1>
+                        <p class="animate__animated animate__backInLeft">Engenheiro de Software</p>
+                    </div>
 
-    <div class="container">
-        <div class="profile-section">
-            <img src="https://avatars.githubusercontent.com/u/23579756?v=4" alt="William Trindade" class="profile-img">
-            <br><br>
-            <h1><img src="" alt="">William Trindade</h1>
-            <h5> <img style="height: 15px;" src="./1275267211.svg" alt=""> Software Engineer</h5>
-            <h6 style="text-align: justify;">
-                I'm a Software Engineer, passionate about learn and use new technologies and solving complex problems, using the most diverse programming languages, mostly using PHP, Java and JS. I'm majoring in <a style="text-decoration: none;" target="_blank" href="https://www.ufsm.br/cursos/graduacao/santa-maria/tecnologia-em-sistemas-para-internet">Systems for Internet - UFSM</a>, working as a Full-Stack developer and producing content for my personal website.
-            </h6>
-            <div class="social-links">
-                <a target="_blank" href="https://github.com/williamtrindade"><i class="fab fa-github"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/williamdatrindade/"><i class="fab fa-linkedin"></i></a>
-                <a target="_blank" href="https://www.instagram.com/williamtrindadedev/"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://williamtrindadedev.medium.com/"><i class="fab fa-medium"></i></a>
-                <a target="_blank" href="https://leetcode.com/williamtrindade/">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104a5.35 5.35 0 0 0-.125.513a5.527 5.527 0 0 0 .062 2.362a5.83 5.83 0 0 0 .349 1.017a5.938 5.938 0 0 0 1.271 1.818l4.277 4.193l.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019l-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523a2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0m-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382a1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382a1.38 1.38 0 0 0-1.38-1.382z"/></svg>
-                </a>
+                </div>
+                <div class="col-12 right-container">
+                    <!-- <video controls width="80%">
+                            <source src="caminho-do-video.mp4" type="video/mp4">
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video> -->
+
+                    <iframe width="560" height="80%" src="https://www.youtube.com/embed/0RjojWKqsFY?si=f_7uXJAA8yVv4nMQ"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+        <div>
+
+            <br>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="text-align: center;">
+                        <a href="#"
+                            class="btn btn-primary scroll-button-home animate__animated animate__bounce animate__infinite"
+                            style="font-size: 100%;">
+                            ↓ Role para baixo ↓
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <hr>
+        </div>
+        <div class="container-fluid" style="float: left;">
+            <style>
+                /* Wrapper para conter os projetos e os botões */
+                .projects-wrapper {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    overflow: hidden;
+                    /* Oculta partes fora do wrapper */
+                    width: 100%;
+                    /* Ajuste conforme necessário */
+                    margin: 0 auto;
+                }
+
+                /* Botões de scroll */
+                .scroll-button {
+                    background-color: #333;
+                    color: white;
+                    border: none;
+                    font-size: 2rem;
+                    cursor: pointer;
+                    width: 55px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    z-index: 2;
+                    transition: background-color 0.3s ease;
+                }
+
+                .scroll-button:hover {
+                    background-color: black;
+                }
+
+                /* Botão à esquerda */
+                .scroll-button.left {
+                    margin-right: 10px;
+                }
+
+                /* Botão à direita */
+                .scroll-button.right {
+                    margin-left: 10px;
+                }
+
+                /* Contêiner dos projetos */
+                .projects-container {
+                    display: flex;
+                    /* Alinha os projetos em linha */
+                    gap: 20px;
+                    /* Espaço entre os quadrados */
+                    overflow-x: scroll;
+                    /* Habilita o scroll horizontal */
+                    scroll-behavior: smooth;
+                    /* Scroll suave */
+                    width: 100%;
+                    /* Mantém o contêiner dentro do wrapper */
+                    padding: 10px 0;
+                    /* Espaçamento vertical */
+                }
+
+                /* Estilo dos projetos */
+                .project {
+                    flex: 0 0 200px;
+                    /* Mantém a largura fixa dos quadrados */
+                    height: 200px;
+                    /* Altura dos quadrados */
+                    background-color: #ddd;
+                    /* Fundo inicial */
+                    border: 5px solid white;
+                    /* Borda inicial */
+                    transition: border-color 0.3s ease;
+                    /* Transição suave */
+                }
+
+                .project:hover {
+                    border-color: black;
+                    /* Borda preta ao passar o mouse */
+                }
+            </style>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <div class="container">
+                            <h2>Projetos</h2>
+                            <div class="projects-wrapper">
+                                <button class="scroll-button left">&larr;</button>
+                                <div class="projects-container">
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                    <div class="project"></div>
+                                </div>
+                                <button class="scroll-button right">&rarr;</button>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-<hr>
-    <!-- Medium Section -->
-    <div class="medium-section">
-        <div class="container">
-            <h1>See the articles that are published on the medium</h1>
-            <h6 class="medium-description">Learn the basics of software development</h6>
-            <a target="_blank" href="https://williamtrindadedev.medium.com" class="medium-button">Read articles</a>
-        </div>
-    </div>
-
-    <!-- Parallax Section -->
-    <div class="parallax-section" id="parallax">
-        <h5>
-            Commit to the Lord whatever you do, and he will establish your plans. -  Proverbs 16:3
-        </h5>
-    </div>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
+<script>
+    const leftButton = document.querySelector('.scroll-button.left');
+    const rightButton = document.querySelector('.scroll-button.right');
+    const projectsContainer = document.querySelector('.projects-container');
+
+    // Função para scrollar para a esquerda
+    leftButton.addEventListener('click', () => {
+        projectsContainer.scrollBy({
+            left: -200, // Ajuste para rolar para a esquerda
+            behavior: 'smooth',
+        });
+    });
+
+    // Função para scrollar para a direita
+    rightButton.addEventListener('click', () => {
+        projectsContainer.scrollBy({
+            left: 200, // Ajuste para rolar para a direita
+            behavior: 'smooth',
+        });
+    });
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
 
 </html>
