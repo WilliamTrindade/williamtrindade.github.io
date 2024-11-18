@@ -167,31 +167,30 @@
             <br>
         </div>
 
-        <!--PROJETOS-->
         <style>
+            /* Seção de Projetos */
             .projects-section {
                 background: #ffffff;
                 padding: 20px 0;
             }
-
+        
             .projects-title {
                 font-size: 2rem;
                 color: rgb(0, 0, 0);
                 text-align: center;
             }
-
+        
             .projects-container {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 20px;
                 max-width: 100%;
-                /* Evitar que o conteúdo ultrapasse a largura da tela */
                 padding: 0 15px;
-                /* Para evitar overflow no mobile */
             }
-
+        
             .project-card {
+                position: relative;
                 border-radius: 10px;
                 background: #c3c3c3;
                 color: #fff;
@@ -202,119 +201,93 @@
                 justify-content: center;
                 text-align: center;
                 cursor: pointer;
+                overflow: hidden;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
-
+        
             .project-card:hover {
                 transform: scale(1.05);
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
             }
-
-            .modal-content {
-                border-radius: 10px;
-                background-color: #000;
-                color: white;
+        
+            .project-card .project-tag {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: #ff5722;
+                color: #fff;
+                padding: 5px 10px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                border-radius: 5px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+                text-transform: uppercase;
             }
-
-            .modal-header {
-                border-bottom: 1px solid #444;
+        
+            .project-card .project-info {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding: 15px;
+                background: rgba(0, 0, 0, 0.8);
+                color: #fff;
+                text-align: left;
+                transform: translateY(100%);
+                transition: transform 0.3s ease;
             }
-
-            .modal-body {
-                background-color: #111;
+        
+            .project-card:hover .project-info {
+                transform: translateY(0);
+            }
+        
+            .project-title {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+        
+            .project-description {
+                font-size: 0.9rem;
+                margin-top: 10px;
             }
         </style>
+        
         <div class="container">
             <section class="projects-section">
                 <h2 class="projects-title mb-4">Meus Projetos</h2>
                 <div class="projects-container">
                     <!-- Projeto 1 -->
-                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Projeto 1" data-description="Descrição detalhada do Projeto 1">
+                    <div class="project-card">
+                        <div class="project-tag">Full Stack</div>
+                        <div class="project-info">
+                            <h5 class="project-title">Projeto 1</h5>
+                            <p class="project-description">Descrição detalhada do Projeto 1.</p>
+                        </div>
                         Projeto 1
                     </div>
                     <!-- Projeto 2 -->
-                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Projeto 2" data-description="Descrição detalhada do Projeto 2">
+                    <div class="project-card">
+                        <div class="project-tag" style="background: #3f51b5;">UX</div>
+                        <div class="project-info">
+                            <h5 class="project-title">Projeto 2</h5>
+                            <p class="project-description">Descrição detalhada do Projeto 2.</p>
+                        </div>
                         Projeto 2
                     </div>
                     <!-- Projeto 3 -->
-                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Projeto 3" data-description="Descrição detalhada do Projeto 3">
+                    <div class="project-card">
+                        <div class="project-tag" style="background: #4caf50;">Back-End</div>
+                        <div class="project-info">
+                            <h5 class="project-title">Projeto 3</h5>
+                            <p class="project-description">Descrição detalhada do Projeto 3.</p>
+                        </div>
                         Projeto 3
                     </div>
-                    <!-- Projeto 4 -->
-                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Projeto 4" data-description="Descrição detalhada do Projeto 4">
-                        Projeto 4
-                    </div>
-                    <!-- Projeto 5 -->
-                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Projeto 5" data-description="Descrição detalhada do Projeto 5">
-                        Projeto 5
-                    </div>
-                    <!-- Projeto 6 -->
-                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Projeto 6" data-description="Descrição detalhada do Projeto 6">
-                        Projeto 6
-                    </div>
                     <!-- Adicione mais projetos aqui -->
-
-                    <!-- Projeto 6 -->
-                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Projeto 6" data-description="Descrição detalhada do Projeto 6">
-                        Projeto 6
-                    </div>
-                    <!-- Adicione mais projetos aqui -->
-
-                    <!-- Projeto 6 -->
-                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
-                        data-title="Projeto 6" data-description="Descrição detalhada do Projeto 6">
-                        Projeto 6
-                    </div>
-                    <!-- Adicione mais projetos aqui -->
-
                 </div>
             </section>
         </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="projectModalLabel">Título do Projeto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Descrição do projeto vai aqui.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-
-        <script>
-            // Atualiza os dados do modal dinamicamente
-            const projectModal = document.getElementById('projectModal');
-            projectModal.addEventListener('show.bs.modal', function (event) {
-                const button = event.relatedTarget;
-                const title = button.getAttribute('data-title');
-                const description = button.getAttribute('data-description');
-
-                const modalTitle = projectModal.querySelector('.modal-title');
-                const modalBody = projectModal.querySelector('.modal-body p');
-
-                modalTitle.textContent = title;
-                modalBody.textContent = description;
-            });
-        </script>
+        
 
         <!--HISTÓRICO START-->
         <style>
