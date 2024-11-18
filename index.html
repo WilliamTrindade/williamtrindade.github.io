@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>William Trindade - Engenheiro de Software</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
     <style>
         * {
@@ -163,274 +164,387 @@
             </div>
         </div>
         <div>
-
             <br>
         </div>
-        <div class="container-fluid" style="float: left;">
-            <style>
-                /* Wrapper para conter os projetos e os botões */
-                .projects-wrapper {
-                    display: flex;
-                    align-items: center;
-                    position: relative;
-                    overflow: hidden;
-                    /* Oculta partes fora do wrapper */
-                    width: 100%;
-                    /* Ajuste conforme necessário */
-                    margin: 0 auto;
-                }
 
-                /* Botões de scroll */
-                .scroll-button {
+        <!--PROJETOS-->
+        <style>
+            .projects-section {
+                background: #ffffff;
+                padding: 20px 0;
+            }
 
-                    color: rgb(0, 0, 0);
-                    border: none;
-                    font-size: 30px;
-                    cursor: pointer;
-                    width: 50px;
-                    height: 50px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: relative;
-                    z-index: 2;
-                    transition: background-color 0.3s ease;
-                }
+            .projects-title {
+                margin-bottom: 20px;
+                font-size: 2rem;
+                color: rgb(0, 0, 0);
+                text-align: left;
+            }
 
+            .projects-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                max-width: 100%;
+                /* Evitar que o conteúdo ultrapasse a largura da tela */
+                padding: 0 15px;
+                /* Para evitar overflow no mobile */
+            }
 
+            .project-card {
+                background: #000;
+                color: #fff;
+                width: 180px;
+                height: 180px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                cursor: pointer;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
 
-                /* Botão à esquerda */
-                .scroll-button.left {
-                    margin-right: 10px;
-                }
+            .project-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            }
 
-                /* Botão à direita */
-                .scroll-button.right {
-                    margin-left: 10px;
-                }
+            .modal-content {
+                border-radius: 15px;
+                background-color: #000;
+                color: white;
+            }
 
-                /* Contêiner dos projetos */
-                .projects-container {
-                    display: flex;
-                    /* Alinha os projetos em linha */
-                    gap: 20px;
-                    /* Espaço entre os quadrados */
-                    overflow-x: scroll;
-                    /* Habilita o scroll horizontal */
-                    scroll-behavior: smooth;
-                    /* Scroll suave */
-                    width: 100%;
-                    /* Mantém o contêiner dentro do wrapper */
-                    padding: 10px 0;
-                    /* Espaçamento vertical */
-                }
+            .modal-header {
+                border-bottom: 1px solid #444;
+            }
 
-                /* Estilo dos projetos */
-                .project {
-                    flex: 0 0 200px;
-                    /* Mantém a largura fixa dos quadrados */
-                    height: 200px;
-                    /* Altura dos quadrados */
-                    background-color: #ddd;
-                    /* Fundo inicial */
-                    border: 5px solid white;
-                    /* Borda inicial */
-                    transition: border-color 0.3s ease;
-                    /* Transição suave */
-                }
+            .modal-body {
+                background-color: #111;
+            }
+        </style>
+        <div class="container-fluid">
+            <section class="projects-section">
+                <h2 class="projects-title">Meus Projetos</h2>
+                <div class="projects-container">
+                    <!-- Projeto 1 -->
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Projeto 1" data-description="Descrição detalhada do Projeto 1">
+                        Projeto 1
+                    </div>
+                    <!-- Projeto 2 -->
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Projeto 2" data-description="Descrição detalhada do Projeto 2">
+                        Projeto 2
+                    </div>
+                    <!-- Projeto 3 -->
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Projeto 3" data-description="Descrição detalhada do Projeto 3">
+                        Projeto 3
+                    </div>
+                    <!-- Projeto 4 -->
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Projeto 4" data-description="Descrição detalhada do Projeto 4">
+                        Projeto 4
+                    </div>
+                    <!-- Projeto 5 -->
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Projeto 5" data-description="Descrição detalhada do Projeto 5">
+                        Projeto 5
+                    </div>
+                    <!-- Projeto 6 -->
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Projeto 6" data-description="Descrição detalhada do Projeto 6">
+                        Projeto 6
+                    </div>
+                    <!-- Adicione mais projetos aqui -->
 
-                .project:hover {
-                    border-color: black;
-                    /* Borda preta ao passar o mouse */
-                }
-            </style>
+                    <!-- Projeto 6 -->
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Projeto 6" data-description="Descrição detalhada do Projeto 6">
+                        Projeto 6
+                    </div>
+                    <!-- Adicione mais projetos aqui -->
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div>
-                        <div class="container">
-                            <h2>Projetos</h2>
-                            <div class="projects-wrapper">
-                                <div>
-                                    <p class="scroll-button left">&larr;</p>
+                    <!-- Projeto 6 -->
+                    <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Projeto 6" data-description="Descrição detalhada do Projeto 6">
+                        Projeto 6
+                    </div>
+                    <!-- Adicione mais projetos aqui -->
 
-                                </div>
-                                <div class="projects-container">
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                </div>
-                                <div>
-                                    <p class="scroll-button right">&rarr;</p>
+                </div>
+            </section>
+        </div>
 
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModalLabel">Título do Projeto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Descrição do projeto vai aqui.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div>
-            <hr>
-        </div>
-        <div class="container-fluid" style="float: left;">
-            <style>
-                /* Wrapper para conter os projetos e os botões */
-                .projects-wrapper {
-                    display: flex;
-                    align-items: center;
-                    position: relative;
-                    overflow: hidden;
-                    /* Oculta partes fora do wrapper */
-                    width: 100%;
-                    /* Ajuste conforme necessário */
-                    margin: 0 auto;
-                }
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 
-                /* Botões de scroll */
-                .scroll-button {
+        <script>
+            // Atualiza os dados do modal dinamicamente
+            const projectModal = document.getElementById('projectModal');
+            projectModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const title = button.getAttribute('data-title');
+                const description = button.getAttribute('data-description');
 
-                    color: rgb(0, 0, 0);
-                    border: none;
-                    font-size: 30px;
-                    cursor: pointer;
-                    width: 50px;
-                    height: 50px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: relative;
-                    z-index: 2;
-                    transition: background-color 0.3s ease;
-                }
+                const modalTitle = projectModal.querySelector('.modal-title');
+                const modalBody = projectModal.querySelector('.modal-body p');
 
+                modalTitle.textContent = title;
+                modalBody.textContent = description;
+            });
+        </script>
 
+        <!--HISTÓRICO START-->
+        <style>
+            .timeline {
+                float: left;
+                position: relative;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                max-width: 900px;
+                list-style: none;
+            }
 
-                /* Botão à esquerda */
-                .scroll-button.left {
-                    margin-right: 10px;
-                }
+            .timeline-item {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 2rem;
+                position: relative;
+            }
 
-                /* Botão à direita */
-                .scroll-button.right {
-                    margin-left: 10px;
-                }
+            .timeline-date {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #333;
+                margin-right: 1rem;
+            }
 
-                /* Contêiner dos projetos */
-                .projects-container {
-                    display: flex;
-                    /* Alinha os projetos em linha */
-                    gap: 20px;
-                    /* Espaço entre os quadrados */
-                    overflow-x: scroll;
-                    /* Habilita o scroll horizontal */
-                    scroll-behavior: smooth;
-                    /* Scroll suave */
-                    width: 100%;
-                    /* Mantém o contêiner dentro do wrapper */
-                    padding: 10px 0;
-                    /* Espaçamento vertical */
-                }
+            .timeline-content {
+                background: #000;
+                color: #fff;
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                position: relative;
+                z-index: 2;
+            }
 
-                /* Estilo dos projetos */
-                .project {
-                    flex: 0 0 200px;
-                    /* Mantém a largura fixa dos quadrados */
-                    height: 200px;
-                    /* Altura dos quadrados */
-                    background-color: #ddd;
-                    /* Fundo inicial */
-                    border: 5px solid white;
-                    /* Borda inicial */
-                    transition: border-color 0.3s ease;
-                    /* Transição suave */
-                }
+            .timeline-content h3 {
+                margin-bottom: 0.5rem;
+                font-size: 1.25rem;
+                color: #f5f5f5;
+            }
 
-                .project:hover {
-                    border-color: black;
-                    /* Borda preta ao passar o mouse */
-                }
-            </style>
+            .timeline::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 30px;
+                width: 4px;
+                height: 100%;
+                background: #000;
+            }
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div>
-                        <div class="container">
-                            <h2>Projetos</h2>
-                            <div class="projects-wrapper">
-                                <div>
-                                    <p class="scroll-button left">&larr;</p>
+            * {
+                box-sizing: border-box;
+            }
+        </style>
 
-                                </div>
-                                <div class="projects-container">
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                    <div class="project"></div>
-                                </div>
-                                <div>
-                                    <p class="scroll-button right">&rarr;</p>
+        <div style="width: 100%;" class="container-fluid">
 
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
+            <h2 class="mb-4">Minha Trajetória</h2>
+            <div class="timeline" style="background-color: #ffffff;">
+                <!-- Evento 1 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">2015</div>
+                    <div class="timeline-content">
+                        <h3>Início nos estudos de tecnologia</h3>
+                        <p>
+                            Comecei meus cursos na área de tecnologia aos 15 anos, focando em programação e
+                            desenvolvimento web.
+                        </p>
                     </div>
                 </div>
+
+                <!-- Evento 2 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">2018</div>
+                    <div class="timeline-content">
+                        <h3>Primeiro emprego como desenvolvedor</h3>
+                        <p>Trabalhei na empresa XYZ, lidando com projetos em PHP e JavaScript.</p>
+                    </div>
+                </div>
+
+                <!-- Evento 3 -->
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h3>Engenheiro de Software</h3>
+                        <p>
+                            Evoluí para engenheiro de software, focando em arquiteturas limpas e boas
+                            práticas
+                            de
+                            código.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Adicione mais eventos conforme necessário -->
             </div>
         </div>
+
+        <!--MEDIUM-->
+        <!-- Medium Posts Section -->
+        <style>
+            /* Efeito Glassmorphism para Medium Section */
+            /* Efeito Glassmorphism com Imagem de Fundo */
+            .medium-section {
+                border-radius: 10px;
+                width: 100%;
+                float: left;
+                padding: 50px 0;
+                background: rgba(255, 255, 255, 0.2);
+            }
+
+
+            .medium-title {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 30px;
+                text-align: center;
+                color: #000;
+            }
+
+            .medium-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .medium-card {
+                background: #000;
+                color: #fff;
+                width: 290px;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .medium-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            }
+
+            .medium-card img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+            }
+
+            .medium-card .card-body {
+                padding: 15px;
+            }
+
+            .medium-card .card-title {
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .medium-card .card-link {
+                display: inline-block;
+                margin-top: 10px;
+                color: #fff;
+                text-decoration: underline;
+                font-size: 0.9rem;
+            }
+
+            .medium-card .card-link:hover {
+                color: #ddd;
+            }
+        </style>
+        <div style="width: 100%;" class="container-fluid">
+            <section class="medium-section">
+                <h2 class="medium-title">Meus Posts no Medium</h2>
+                <div class="medium-container" id="mediumPosts">
+                    <!-- Os posts serão carregados aqui -->
+                </div>
+            </section>
+        </div>
+
+
+        <script>
+            // Função para buscar e exibir os posts do Medium usando RSS Feed
+            async function fetchMediumPosts() {
+                const rssUrl = "https://medium.com/feed/@thechandrayangupta"; // Substitua '@seu_usuario' pelo seu perfil no Medium.
+                const container = document.getElementById("mediumPosts");
+                const parser = new DOMParser();
+
+                try {
+                    const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`);
+                    const data = await response.json();
+
+                    // Itera pelos itens do feed e cria os cards
+                    data.items.slice(0, 6).forEach((post) => {
+                        const card = document.createElement("div");
+
+                        card.classList.add("medium-card");
+
+
+                        // Tenta pegar a primeira imagem do conteúdo
+                        const doc = parser.parseFromString(post.content, "text/html");
+                        const firstImage = doc.querySelector("img")?.src || 'https://via.placeholder.com/300x150';
+
+
+                        card.innerHTML = `
+                    <img src="${firstImage}" alt="Thumbnail">
+                    <div class="card-body">
+                        <h5 class="card-title">${post.title}</h5>
+                        <p class="card-text">${post.pubDate.split(" ")[0]}</p>
+                        <a href="${post.link}" class="card-link" target="_blank">Ler mais</a>
+                    </div>
+                `;
+
+                        container.appendChild(card);
+                    });
+                } catch (error) {
+                    console.error("Erro ao carregar os posts do Medium:", error);
+                    container.innerHTML = `<p>Não foi possível carregar os posts no momento.</p>`;
+                }
+            }
+
+            // Chama a função ao carregar a página
+            fetchMediumPosts();
+        </script>
+
     </div>
 </body>
-<script>
-    const leftButton = document.querySelector('.scroll-button.left');
-    const rightButton = document.querySelector('.scroll-button.right');
-    const projectsContainer = document.querySelector('.projects-container');
 
-    // Função para scrollar para a esquerda
-    leftButton.addEventListener('click', () => {
-        projectsContainer.scrollBy({
-            left: -200, // Ajuste para rolar para a esquerda
-            behavior: 'smooth',
-        });
-    });
-
-    // Função para scrollar para a direita
-    rightButton.addEventListener('click', () => {
-        projectsContainer.scrollBy({
-            left: 200, // Ajuste para rolar para a direita
-            behavior: 'smooth',
-        });
-    });
-
-
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
@@ -440,5 +554,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 
 </html>
