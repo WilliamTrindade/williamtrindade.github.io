@@ -559,7 +559,8 @@
                 }
             }
         </style>
-        <div style="background-color: #fff; padding: 2rem 0;text-align: center;justify-content: center;" id="experiencia">
+        <div style="background-color: #fff; padding: 2rem 0;text-align: center;justify-content: center;"
+            id="experiencia">
             <h2 class="text-center">Minha Experiência Profissional</h2>
             <div class="timeline-horizontal" style="justify-content: center;">
                 <!-- Empresa 1 -->
@@ -814,7 +815,7 @@
                 }
             </style>
             <h2 class="text-center" id="redes">Minhas redes sociais</h2>
-
+            <p style="text-align: center;">@williamtrindadedev</p>
             <div class="media-container">
                 <!-- Instagram -->
                 <a class="media-card instagram" href="https://www.instagram.com/williamtrindadedev/" target="_blank">
@@ -897,19 +898,20 @@
                             </ul>
                         </div>
 
-                       
+
 
                         <!-- Coluna 3 - Informações -->
                         <div class="col-md-4">
                             <h5>Informações</h5>
-                            <p>&copy; <span id="current-year"></span> William Trindade - Todos os direitos reservados.</p>
+                            <p>&copy; <span id="current-year"></span> William Trindade - Todos os direitos reservados.
+                            </p>
                             <p>Desenvolvido com paixão e dedicação para mostrar o melhor de mim e do meu trabalho.</p>
                         </div>
-                        
+
                         <script>
                             document.getElementById('current-year').textContent = new Date().getFullYear();
                         </script>
-                        
+
                     </div>
                 </div>
             </footer>
@@ -1002,6 +1004,56 @@
 
         </div>
     </div>
+
+    <style>
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #000;
+            /* Preto */
+            color: #fff;
+            /* Branco */
+            border: none;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            display: none;
+            /* Oculto inicialmente */
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #333;
+            /* Cinza escuro */
+        }
+    </style>
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Subir ao topo">
+        ↑
+    </button>
+    <script>
+        const scrollToTopButton = document.getElementById('scrollToTop');
+
+        // Mostrar o botão quando o usuário rolar para baixo
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) { // Exibe o botão ao rolar 100px
+                scrollToTopButton.style.display = 'flex';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+
+        // Voltar ao topo da página ao clicar no botão
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
