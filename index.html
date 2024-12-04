@@ -172,18 +172,6 @@
 
         <!--sobre a ideia-->
         <style>
-            .about-services-section {
-                color: #080808;
-                padding: 50px 20px;
-                text-align: center;
-            }
-
-            .about-services-section h2 {
-                font-size: 2rem;
-                text-align: center;
-                color: #161616;
-            }
-
             .about-services-container {
                 max-width: 1200px;
                 margin: 0 auto;
@@ -194,8 +182,9 @@
             }
 
             .service-card {
+                margin: 0;
+                border-left: 5px solid rgb(126, 0, 200);
                 background: rgba(240, 240, 240, 0.9);
-                border-radius: 10px;
                 padding: 20px;
                 flex: 1;
                 min-width: 250px;
@@ -227,57 +216,43 @@
             .service-card:hover p {
                 color: #ffffff;
             }
-
-            .creative-text {
-                font-size: 1.2rem;
-                line-height: 1.8;
-                max-width: 1100px;
-                margin: 30px auto;
-                color: #000000;
-                font-style: italic;
-                justify-content: center;
-                text-align: justify;
-            }
         </style>
 
-        <div class="about-services-section" id="sobre">
-            <h2 class="mb-4">Sobre Mim & Meus Serviços</h2>
-            <p class="creative-text">
-                Sou Engenheiro de Software, apaixonado por aprender e utilizar novas tecnologias e resolver
-                problemas complexos, utilizando as mais diversas linguagens de programação, principalmente PHP, Java e
-                JS.
-                Estou me formando em Sistemas para Internet, trabalhando como desenvolvedor Full-Stack e produzindo
-                conteúdo nas redes sociais.
-            </p>
-            <div class="about-services-container">
-                <!-- Serviço 1 -->
-                <div class="service-card">
-                    <h3>Desenvolvimento Full Stack</h3>
-                    <p>
-                        Crio aplicações robustas e escaláveis do zero, conectando o que acontece no front-end ao que
-                        roda no back-end, com foco em performance e qualidade.
-                    </p>
-                </div>
-                <!-- Serviço 2 -->
-                <div class="service-card">
-                    <h3>Design de Interfaces</h3>
-                    <p>
-                        Transformo ideias em designs intuitivos, responsivos e atraentes, garantindo que cada usuário
-                        tenha uma experiência única e memorável.
-                    </p>
-                </div>
-                <!-- Serviço 3 -->
-                <div class="service-card">
-                    <h3>Soluções Back End</h3>
-                    <p>
-                        Arquiteto sistemas poderosos que suportam grandes cargas e proporcionam segurança, garantindo
-                        que sua aplicação funcione sempre, sem falhas.
-                    </p>
-                </div>
+        <div class="container mb-4">
+            <div>
+                <h2 style="text-align: center;" class="m-5">O que eu faço</h2>
+                <div class="about-services-container">
+                    <!-- Serviço 1 -->
+                    <div class="service-card">
+                        <h3>Desenvolvimento Full Stack</h3>
+                        <p>
+                            Crio aplicações robustas e escaláveis do zero, conectando o que acontece no front-end ao que
+                            roda no back-end, com foco em performance e qualidade.
+                        </p>
+                    </div>
+                    <!-- Serviço 2 -->
+                    <div class="service-card">
+                        <h3>Design de Interfaces</h3>
+                        <p>
+                            Transformo ideias em designs intuitivos, responsivos e atraentes, garantindo que cada
+                            usuário
+                            tenha uma experiência única e memorável.
+                        </p>
+                    </div>
+                    <!-- Serviço 3 -->
+                    <div class="service-card">
+                        <h3>Soluções Back End</h3>
+                        <p>
+                            Arquiteto sistemas poderosos que suportam grandes cargas e proporcionam segurança,
+                            garantindo
+                            que sua aplicação funcione sempre, sem falhas.
+                        </p>
+                    </div>
 
+                </div>
             </div>
         </div>
-
+        
         <div>
             <style>
                 /* Estilo para a frase motivacional */
@@ -338,6 +313,21 @@
                 </div>
             </div>
         </div>
+        
+        <!--sobre mim-->
+        <div class="container">
+            <div>
+                <h2 class="m-5" style="text-align: center;">Sobre Mim</h2>
+                <p style="font-size: 120%;text-align: justify; padding: 0% 3% 0% 3%;">
+                    Sou Engenheiro de Software, apaixonado por aprender e utilizar novas tecnologias e resolver
+                    problemas complexos, utilizando as mais diversas linguagens de programação, principalmente PHP, Java
+                    e
+                    JS.
+                    Estou me formando em Sistemas para Internet, trabalhando como desenvolvedor Full-Stack e produzindo
+                    conteúdo nas redes sociais.
+                </p>
+            </div>
+        </div>
         <!--projetos-->
         <style>
             /* Seção de Projetos */
@@ -355,7 +345,7 @@
             .projects-container {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: space-around;
                 gap: 20px;
                 max-width: 100%;
                 padding: 0 15px;
@@ -363,11 +353,10 @@
 
             .project-card {
                 position: relative;
-                border-radius: 10px;
                 background: #c3c3c3;
                 color: #fff;
-                width: 250px;
-                height: 250px;
+                width: 300px;
+                height: 300px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -424,9 +413,9 @@
             }
         </style>
 
-        <div class="container-fluid" id="portfolio">
+        <div class="container" id="portfolio">
             <section class="projects-section">
-                <h2 class="projects-title mb-4">Portfólio</h2>
+                <h2 class="projects-title m-5">Portfólio</h2>
                 <div class="projects-container">
                     <!-- Projeto 1 -->
                     <div class="project-card">
@@ -437,6 +426,7 @@
                         </div>
                         Projeto 1
                     </div>
+                    
                     <!-- Projeto 2 -->
                     <div class="project-card">
                         <div class="project-tag" style="background: #3f51b5;">UX</div>
@@ -460,8 +450,6 @@
             </section>
         </div>
 
-
-        <!-- HISTÓRICO PROFISSIONAL -->
         <!-- HISTÓRICO PROFISSIONAL -->
         <style>
             .timeline-horizontal {
@@ -673,15 +661,14 @@
                 color: #ddd;
             }
         </style>
-        <div style="width: 100%;" class="container-fluid" id="artigos">
+        <div style="width: 100%;" class="container" id="artigos">
             <section class="medium-section">
-                <h2 class="medium-title mb-4">Meus artigos no Medium</h2>
+                <h2 class="medium-title m-5">Meus artigos no Medium</h2>
                 <div class="medium-container" id="mediumPosts">
                     <!-- Os posts serão carregados aqui -->
                 </div>
             </section>
         </div>
-
 
         <script>
             // Função para buscar e exibir os posts do Medium usando RSS Feed
