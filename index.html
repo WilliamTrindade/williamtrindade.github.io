@@ -549,7 +549,7 @@
         </style>
         <div style="background-color: #fff; padding: 2rem 0;text-align: center;justify-content: center;"
             id="experiencia">
-            <h2 class="text-center">Minha Experiência Profissional</h2>
+            <h2 class="text-center m-5">Minha Experiência Profissional</h2>
             <div class="timeline-horizontal" style="justify-content: center;">
                 <!-- Empresa 1 -->
                 <div class="timeline-item">
@@ -603,14 +603,6 @@
                 background: rgba(255, 255, 255, 0.2);
             }
 
-
-            .medium-title {
-
-                text-align: center;
-                color: #080808;
-
-            }
-
             .medium-container {
                 display: flex;
                 flex-wrap: wrap;
@@ -621,8 +613,8 @@
             .medium-card {
                 background: #000;
                 color: #fff;
-                width: 250px;
-                border-radius: 10px;
+                width: 300px;
+                height: 300px;
                 overflow: hidden;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -650,20 +642,25 @@
             }
 
             .medium-card .card-link {
+                transition: 0.4s;
+                clear: both;
+                text-decoration: none;
+                padding: 2% 10% 2% 10%;
+                background-color: rgb(255, 255, 255);
                 display: inline-block;
                 margin-top: 10px;
-                color: #fff;
-                text-decoration: underline;
+                color: #000000;
                 font-size: 0.9rem;
             }
 
             .medium-card .card-link:hover {
-                color: #ddd;
+                color: #ffffff;
+                background-color: rgb(126, 0, 200);;
             }
         </style>
         <div style="width: 100%;" class="container" id="artigos">
             <section class="medium-section">
-                <h2 class="medium-title m-5">Meus artigos no Medium</h2>
+                <h2 class="m-5" style="text-align: center;">Meus artigos no Medium</h2>
                 <div class="medium-container" id="mediumPosts">
                     <!-- Os posts serão carregados aqui -->
                 </div>
@@ -698,7 +695,7 @@
                     <div class="card-body">
                         <h5 class="card-title">${post.title}</h5>
                         <p class="card-text">${post.pubDate.split(" ")[0]}</p>
-                        <a href="${post.link}" class="card-link" target="_blank">Ler mais</a>
+                        <a href="${post.link}" class="card-link" target="_blank">Ler artigo</a>
                     </div>
                 `;
 
@@ -730,7 +727,6 @@
                     text-decoration: none;
                     width: 250px;
                     padding: 1.5rem;
-                    border-radius: 15px;
                     color: white;
                     display: flex;
                     flex-direction: column;
